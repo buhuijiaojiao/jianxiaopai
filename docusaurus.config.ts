@@ -5,9 +5,14 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: "jianxiaopai",
-  tagline: "jianxiaopai are cool",
+  title: "简小派",
+  tagline: "一站式 AI 赋能求职平台",
   favicon: "img/favicon.ico",
+  
+  // Development server configuration
+  customFields: {
+    port: 3003,
+  },
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -33,8 +38,8 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
+    defaultLocale: "zh-Hans",
+    locales: ["zh-Hans"],
   },
 
   presets: [
@@ -74,7 +79,7 @@ const config: Config = {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
     navbar: {
-      title: "jianxiaopai portal",
+      title: "简小派文档",
       logo: {
         alt: "My Site Logo",
         src: "img/logo.png",
@@ -84,12 +89,12 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
-          label: "Tutorial",
+          label: "使用指南",
         },
-        { to: "/blog", label: "Blog", position: "left" },
+        { to: "/blog", label: "博客", position: "left" },
         {
           href: "https://github.com/buhuijiaojiao/jianxiaopai",
-          label: "GitHub",
+          label: "代码仓库",
           position: "right",
         },
       ],
@@ -98,32 +103,32 @@ const config: Config = {
       style: "dark",
       links: [
         {
-          title: "Docs",
+          title: "文档",
           items: [
             {
-              label: "Tutorial",
+              label: "使用指南",
               to: "/docs/intro",
             },
           ],
         },
         {
-          title: "Community",
+          title: "社区",
           items: [
             {
-              label: "QQ Group Chat",
+              label: "QQ群聊",
               href: "https://qm.qq.com/q/3zp8WTBI7K",
             },
           ],
         },
         {
-          title: "More",
+          title: "更多",
           items: [
             {
-              label: "Blog",
+              label: "博客",
               to: "/blog",
             },
             {
-              label: "GitHub",
+              label: "代码仓库",
               href: "https://github.com/buhuijiaojiao/jianxiaopai",
             },
           ],

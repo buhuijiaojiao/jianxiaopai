@@ -28,3 +28,39 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* 调整布局，让内容靠左 */
+.container {
+  max-width: 1200px !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+/* 减少侧边栏宽度 */
+.theme-doc-sidebar-container {
+  width: 250px !important;
+}
+
+/* 调整主内容区域 */
+.theme-doc-markdown {
+  margin-left: 0 !important;
+  padding-left: 1rem !important;
+}
+
+/* 调整博客布局 */
+.blog-wrapper {
+  margin-left: 0 !important;
+  padding-left: 1rem !important;
+}
+
+/* 调整导航栏 */
+.navbar__inner {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+/* 调整页脚 */
+.footer {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
