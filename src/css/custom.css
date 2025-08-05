@@ -64,3 +64,91 @@
   padding-left: 1rem !important;
   padding-right: 1rem !important;
 }
+
+/* 文档页面样式优化 */
+.theme-doc-markdown {
+  line-height: 1.8;
+}
+
+/* 图片样式 */
+.theme-doc-markdown img {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 标题样式 */
+.theme-doc-markdown h1,
+.theme-doc-markdown h2,
+.theme-doc-markdown h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary);
+}
+
+/* 列表样式 */
+.theme-doc-markdown ul,
+.theme-doc-markdown ol {
+  padding-left: 1.5rem;
+}
+
+.theme-doc-markdown li {
+  margin-bottom: 0.5rem;
+}
+
+/* 引用样式 */
+.theme-doc-markdown blockquote {
+  border-left: 4px solid var(--ifm-color-primary);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  background-color: rgba(46, 133, 85, 0.05);
+  border-radius: 4px;
+}
+
+/* 代码块样式 */
+.theme-doc-markdown code {
+  background-color: rgba(46, 133, 85, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* 强调文本样式 */
+.theme-doc-markdown strong {
+  color: var(--ifm-color-primary-dark);
+  font-weight: 600;
+}
+
+/* 分割线样式 */
+.theme-doc-markdown hr {
+  border: none;
+  border-top: 2px solid var(--ifm-color-primary-light);
+  margin: 2rem 0;
+}
+
+/* 提示框样式 */
+.theme-doc-markdown .admonition {
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+/* 表格样式 */
+.theme-doc-markdown table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.theme-doc-markdown th,
+.theme-doc-markdown td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.theme-doc-markdown th {
+  background-color: var(--ifm-color-primary-lightest);
+  font-weight: 600;
+}
