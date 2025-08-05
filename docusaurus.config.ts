@@ -8,7 +8,7 @@ const config: Config = {
   title: "简小派",
   tagline: "一站式 AI 赋能求职平台",
   favicon: "img/favicon.ico",
-  
+
   // Development server configuration
   customFields: {
     port: 3003,
@@ -50,8 +50,7 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl: "https://github.com/buhuijiaojiao/jianxiaopai/tree/master/",
         },
         blog: {
           showReadingTime: true,
@@ -61,8 +60,7 @@ const config: Config = {
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl: "https://github.com/buhuijiaojiao/jianxiaopai/tree/master/",
           // Useful options to enforce blogging best practices
           onInlineTags: "warn",
           onInlineAuthors: "warn",

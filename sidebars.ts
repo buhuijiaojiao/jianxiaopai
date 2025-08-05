@@ -4,6 +4,7 @@ const sidebars: SidebarsConfig = {
   tutorialSidebar: [
     'intro',
     'create-resume',
+    'hunter-feature',
   ],
 };
 
