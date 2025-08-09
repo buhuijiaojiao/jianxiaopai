@@ -27,6 +27,10 @@ const donorList: DonorItem[] = [
     amount: 500,
   },
   {
+    name: '薛纳',
+    amount: 500,
+  },
+  {
     name: '666同学',
     amount: 150,
   },
