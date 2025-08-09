@@ -1,0 +1,173 @@
+.main {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #34495e;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.totalAmount {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+}
+
+.amount {
+  color: var(--ifm-color-primary);
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.donorsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.donorCard {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.donorCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.donorInfo {
+  flex: 1;
+}
+
+.donorName {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+}
+
+.donorDescription {
+  color: #7f8c8d;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.donorAmount {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--ifm-color-primary);
+  text-align: right;
+}
+
+.thanksSection {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.thanksSection h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.thanksSection p {
+  color: #34495e;
+  line-height: 1.6;
+}
+
+.thanksSection ul {
+  padding-left: 1.5rem;
+}
+
+.thanksSection li {
+  margin-bottom: 0.5rem;
+  color: #34495e;
+}
+
+.contactSection {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contactSection h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.contactSection p {
+  color: #34495e;
+  line-height: 1.6;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #34495e;
+}
+
+.contactItem a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.contactItem a:hover {
+  text-decoration: underline;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .donorsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .donorCard {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .donorAmount {
+    text-align: center;
+  }
+} 

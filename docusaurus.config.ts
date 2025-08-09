@@ -90,6 +90,7 @@ const config: Config = {
           label: "使用指南",
         },
         { to: "/blog", label: "博客", position: "left" },
+        { to: "/donors", label: "捐献榜", position: "left" },
         {
           href: "https://github.com/buhuijiaojiao/jianxiaopai",
           label: "代码仓库",
