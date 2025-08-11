@@ -57,6 +57,10 @@ const donorList: DonorItem[] = [
     description: '1000w token',
   },
   {
+    name: '小猴子',
+    amount: 50,
+  },
+  {
     name: '林同学',
     amount: 36,
   },
