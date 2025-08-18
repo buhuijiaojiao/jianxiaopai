@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import UpgradeAnnouncement from '@site/src/components/UpgradeAnnouncement';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
@@ -58,7 +59,7 @@ export default function Home(): ReactNode {
     <Layout
       title="简小派 - AI求职助手"
       description="一站式AI赋能求职平台，智能优化简历，一键投递岗位，AI模拟面试，助你快速提升求职竞争力">
-      <HomepageHeader />
+      <UpgradeAnnouncement />
       <main>
         <HomepageFeatures />
       </main>
