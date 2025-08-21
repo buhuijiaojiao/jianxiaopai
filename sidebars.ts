@@ -5,6 +5,8 @@ const sidebars: SidebarsConfig = {
   tutorialSidebar: [
     "upgrade-announcement",
     "create-resume",
+    "jianxiaojian-guide",
+    "zhixiaopai-preview",
     {
       type: "category",
       label: "如何优化简历",
