@@ -126,7 +126,8 @@ export default function Donors(): ReactNode {
   return (
     <Layout
       title="捐献榜 - 简小派"
-      description="感谢所有支持简小派的用户，你们的每一份捐赠都是我们前进的动力">
+      description="感谢所有支持简小派的用户，你们的每一份捐赠都是我们前进的动力"
+    >
       <main className={styles.main}>
         <div className="container">
           <div className={styles.header}>
@@ -137,7 +138,10 @@ export default function Donors(): ReactNode {
               感谢所有支持简小派的用户，你们的每一份捐赠都是我们前进的动力
             </p>
             <div className={styles.totalAmount}>
-              总捐赠金额：<span className={styles.amount}>¥{totalAmount.toLocaleString()}</span>
+              总捐赠金额：
+              <span className={styles.amount}>
+                ¥{totalAmount.toLocaleString()}
+              </span>
             </div>
           </div>
 
@@ -163,17 +167,19 @@ export default function Donors(): ReactNode {
 
           <div className={styles.contactSection}>
             <h2>联系我们</h2>
-            <p>
-              如果你想支持简小派的发展，欢迎通过以下方式联系我们：
-            </p>
+            <p>如果你想支持简小派的发展，欢迎通过以下方式联系我们：</p>
             <div className={styles.contactInfo}>
               <div className={styles.contactItem}>
                 <strong>QQ群：</strong>1043216521
               </div>
               <div className={styles.contactItem}>
                 <strong>官网：</strong>
-                <a href="http://8.153.173.210:5173" target="_blank" rel="noopener noreferrer">
-                  http://8.153.173.210:5173
+                <a
+                  href="https://jianlipai.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  https://jianlipai.com/
                 </a>
               </div>
             </div>
