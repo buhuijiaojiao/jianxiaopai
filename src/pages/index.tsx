@@ -30,7 +30,7 @@ function HomepageHeader() {
               >
                 立即体验简小派 🚀
               </Link>
-              <Link className={styles.secondaryButton} to="/docs/intro">
+              <Link className={styles.secondaryButton} to="/docs/intro">  
                 查看使用文档 📖
               </Link>
             </div>

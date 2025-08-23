@@ -102,25 +102,25 @@ const UpgradeAnnouncement: React.FC = () => {
         ref={canvasRef}
         className={styles.fireworksCanvas}
         style={{
-          position: 'absolute',
+          position: "absolute",
           top: 0,
           left: 0,
-          pointerEvents: 'none',
+          pointerEvents: "none",
           zIndex: 1,
         }}
       />
-      
+
       <div className={styles.announcementContent}>
         <div className={styles.badge}>
           <span className={styles.badgeText}>🚀 重磅升级</span>
         </div>
-        
+
         <h1 className={styles.title}>
           简小派平台重磅升级！
           <br />
           <span className={styles.highlight}>全新功能矩阵即将上线</span>
         </h1>
-        
+
         <p className={styles.subtitle}>
           从简历优化到求职全流程，简小派陪你走完求职每一步
         </p>
@@ -132,21 +132,21 @@ const UpgradeAnnouncement: React.FC = () => {
             <p>AI深度分析，智能优化建议</p>
             <span className={styles.status}>已上线</span>
           </div>
-          
+
           <div className={styles.featureCard}>
             <div className={styles.featureIcon}>🔍</div>
             <h3>简小鉴</h3>
             <p>智能公司甄别助手</p>
             <span className={styles.statusComing}>即将上线</span>
           </div>
-          
+
           <div className={styles.featureCard}>
             <div className={styles.featureIcon}>📤</div>
             <h3>在线投递</h3>
             <p>一站式简历投递平台</p>
             <span className={styles.statusComing}>即将上线</span>
           </div>
-          
+
           <div className={styles.featureCard}>
             <div className={styles.featureIcon}>💬</div>
             <h3>求职广场</h3>
@@ -156,16 +156,10 @@ const UpgradeAnnouncement: React.FC = () => {
         </div>
 
         <div className={styles.buttons}>
-          <Link
-            className={styles.primaryButton}
-            to="http://8.153.173.210:5173"
-          >
+          <Link className={styles.primaryButton} to="https://jianlipai.com/">
             立即体验简小派 🚀
           </Link>
-          <Link
-            className={styles.secondaryButton}
-            to="/docs/create-resume"
-          >
+          <Link className={styles.secondaryButton} to="/docs/create-resume">
             查看使用文档 📖
           </Link>
           <Link
