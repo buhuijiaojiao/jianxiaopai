@@ -7,6 +7,7 @@ const sidebars: SidebarsConfig = {
     "create-resume",
     "jianxiaojian-guide",
     "zhixiaopai-preview",
+    "zhixiaopai-guide",
     {
       type: "category",
       label: "如何优化简历",
