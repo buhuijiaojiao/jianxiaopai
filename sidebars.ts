@@ -9,6 +9,7 @@ const sidebars: SidebarsConfig = {
     "zhixiaopai-preview",
     "zhixiaopai-guide",
     "invitation-code-guide",
+    "delivery-invitation-code-guide",
     {
       type: "category",
       label: "如何优化简历",
