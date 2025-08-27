@@ -33,7 +33,8 @@ const sidebars: SidebarsConfig = {
     "invitation-code-guide",
     // 投递邀请码相关文档
     "delivery-invitation-code-guide",
-
+    // 重置密码相关文档
+    "reset-password",
   ],
 };
 
