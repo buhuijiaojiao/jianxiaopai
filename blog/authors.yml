@@ -1,7 +1,8 @@
 jianxiaopai:
   name: 简小派
   title: AI求职助手
-  url: http://8.153.173.210:5173
+  url: http://jianlipai.com
+  bio: 专注于AI求职的助手，帮助你快速找到理想工作
   image_url: /img/logo.png
   page: true
   socials:

@@ -3,13 +3,10 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   tutorialSidebar: [
+    // 升级公告相关文档
     "upgrade-announcement",
+    // 简历相关文档
     "create-resume",
-    "jianxiaojian-guide",
-    "zhixiaopai-preview",
-    "zhixiaopai-guide",
-    "invitation-code-guide",
-    "delivery-invitation-code-guide",
     {
       type: "category",
       label: "如何优化简历",
@@ -25,7 +22,18 @@ const sidebars: SidebarsConfig = {
         "optimize-resume/project-workshop",
       ],
     },
+    // 小派猎头相关文档
     "hunter-feature",
+    // 简小鉴相关文档
+    "jianxiaojian-guide",
+    // 职小派相关文档
+    "zhixiaopai-preview",
+    "zhixiaopai-guide",
+    // 邀请码相关文档
+    "invitation-code-guide",
+    // 投递邀请码相关文档
+    "delivery-invitation-code-guide",
+
   ],
 };
 
