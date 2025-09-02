@@ -35,6 +35,8 @@ const sidebars: SidebarsConfig = {
     "delivery-invitation-code-guide",
     // 重置密码相关文档
     "reset-password",
+    //简小派积分等级机制相关文档
+    "level-system"
   ],
 };
 

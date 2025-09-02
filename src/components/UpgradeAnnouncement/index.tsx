@@ -137,7 +137,7 @@ const UpgradeAnnouncement: React.FC = () => {
             <div className={styles.featureIcon}>🔍</div>
             <h3>简小鉴</h3>
             <p>智能公司甄别助手</p>
-            <span className={styles.statusComing}>即将上线</span>
+            <span className={styles.status}>已上线</span>
           </div>
 
           <div className={styles.featureCard}>
