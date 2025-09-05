@@ -137,19 +137,19 @@ const UpgradeAnnouncement: React.FC = () => {
             <div className={styles.featureIcon}>🔍</div>
             <h3>简小鉴</h3>
             <p>智能公司甄别助手</p>
-            <span className={styles.statusComing}>即将上线</span>
+            <span className={styles.status}>已上线</span>
           </div>
 
           <div className={styles.featureCard}>
             <div className={styles.featureIcon}>📤</div>
             <h3>在线投递</h3>
             <p>一站式简历投递平台</p>
-            <span className={styles.statusComing}>即将上线</span>
+            <span className={styles.status}>已上线</span>
           </div>
 
           <div className={styles.featureCard}>
             <div className={styles.featureIcon}>💬</div>
-            <h3>求职广场</h3>
+            <h3>简小派论坛</h3>
             <p>求职者交流社区</p>
             <span className={styles.statusComing}>即将上线</span>
           </div>
