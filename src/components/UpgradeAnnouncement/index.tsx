@@ -1,182 +1,170 @@
-import React, { useEffect, useRef } from 'react';
+// ForumLaunchAnnouncement.tsx
+import React, { useState, useEffect } from 'react';
 import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 
-interface Firework {
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
-  life: number;
-  maxLife: number;
-  color: string;
-}
-
-const UpgradeAnnouncement: React.FC = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const fireworksRef = useRef<Firework[]>([]);
+const ForumLaunchAnnouncement: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    // 设置canvas尺寸
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    // 烟花颜色
-    const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3', '#54a0ff'];
-
-    // 创建烟花
-    const createFirework = (x: number, y: number) => {
-      const particleCount = 50;
-      for (let i = 0; i < particleCount; i++) {
-        const angle = (Math.PI * 2 * i) / particleCount;
-        const velocity = 2 + Math.random() * 3;
-        fireworksRef.current.push({
-          x,
-          y,
-          vx: Math.cos(angle) * velocity,
-          vy: Math.sin(angle) * velocity,
-          life: 100,
-          maxLife: 100,
-          color: colors[Math.floor(Math.random() * colors.length)],
-        });
-      }
-    };
-
-    // 动画循环
-    const animate = () => {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      // 更新和绘制烟花
-      fireworksRef.current = fireworksRef.current.filter((firework) => {
-        firework.x += firework.vx;
-        firework.y += firework.vy;
-        firework.vy += 0.05; // 重力
-        firework.life--;
-
-        if (firework.life > 0) {
-          const alpha = firework.life / firework.maxLife;
-          ctx.save();
-          ctx.globalAlpha = alpha;
-          ctx.fillStyle = firework.color;
-          ctx.beginPath();
-          ctx.arc(firework.x, firework.y, 2, 0, Math.PI * 2);
-          ctx.fill();
-          ctx.restore();
-          return true;
-        }
-        return false;
-      });
-
-      // 随机创建新烟花
-      if (Math.random() < 0.02) {
-        createFirework(
-          Math.random() * canvas.width,
-          Math.random() * canvas.height * 0.5
-        );
-      }
-
-      requestAnimationFrame(animate);
-    };
-
-    animate();
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    
+    // 触发入场动画
+    const timer = setTimeout(() => setIsVisible(true), 100);
 
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timer);
     };
   }, []);
 
   return (
     <div className={styles.announcementContainer}>
-      <canvas
-        ref={canvasRef}
-        className={styles.fireworksCanvas}
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          pointerEvents: "none",
-          zIndex: 1,
-        }}
-      />
+      {/* 背景装饰元素 */}
+      <div className={styles.backgroundDecorations}>
+        <div 
+          className={styles.decoration1}
+          style={{ transform: `translateY(${scrollY * 0.1}px) rotate(${scrollY * 0.05}deg)` }}
+        />
+        <div 
+          className={styles.decoration2}
+          style={{ transform: `translateY(${-scrollY * 0.15}px) rotate(${-scrollY * 0.08}deg)` }}
+        />
+        <div className={styles.floatingDot1} />
+        <div className={styles.floatingDot2} />
+        <div className={styles.floatingDot3} />
+      </div>
 
-      <div className={styles.announcementContent}>
-        <div className={styles.badge}>
-          <span className={styles.badgeText}>🚀 重磅升级</span>
-        </div>
-
-        <h1 className={styles.title}>
-          简小派平台重磅升级！
-          <br />
-          <span className={styles.highlight}>全新功能矩阵即将上线</span>
-        </h1>
-
-        <p className={styles.subtitle}>
-          从简历优化到求职全流程，简小派陪你走完求职每一步
-        </p>
-
-        <div className={styles.featureGrid}>
-          <div className={styles.featureCard}>
-            <div className={styles.featureIcon}>✨</div>
-            <h3>简历优化</h3>
-            <p>AI深度分析，智能优化建议</p>
-            <span className={styles.status}>已上线</span>
+      <div className={`${styles.announcementContent} ${isVisible ? styles.fadeInUp : ''}`}>
+        
+        {/* 公告头部 */}
+        <header className={styles.header}>
+          <div className={`${styles.badge} ${styles.pulseAnimation}`}>
+            <span className={styles.sparkle}>✨</span>
+            <span className={styles.badgeText}>产品公告</span>
           </div>
-
-          <div className={styles.featureCard}>
-            <div className={styles.featureIcon}>🔍</div>
-            <h3>简小鉴</h3>
-            <p>智能公司甄别助手</p>
-            <span className={styles.status}>已上线</span>
+          
+          <h1 className={styles.title}>
+            <span className={styles.gradientText}>简小派论坛正式上线</span>
+            <span className={styles.subtitle}>专业求职者交流社区</span>
+          </h1>
+          
+          <div className={styles.meta}>
+            <span className={styles.date}>2025年9月</span>
+            <span className={styles.divider}>·</span>
+            <span className={styles.team}>简历派产品团队</span>
           </div>
+        </header>
 
-          <div className={styles.featureCard}>
-            <div className={styles.featureIcon}>📤</div>
-            <h3>在线投递</h3>
-            <p>一站式简历投递平台</p>
-            <span className={styles.status}>已上线</span>
+        {/* 核心内容 */}
+        <main className={styles.main}>
+          <section className={styles.announcement}>
+            <div className={styles.announcementText}>
+              <p className={styles.leadText}>
+                经过团队精心开发和测试，简小派论坛现已正式面向所有用户开放。
+                论坛旨在为求职者提供专业的交流平台，促进经验分享与互助成长。
+              </p>
+            </div>
+          </section>
+
+          {/* 平台功能状态 */}
+          <section className={styles.platformStatus}>
+            <h2 className={styles.sectionTitle}>平台功能状态</h2>
+            
+            <div className={styles.featureGrid}>
+              <div className={`${styles.featureCard} ${styles.animationDelay1}`}>
+                <div className={styles.featureHeader}>
+                  <div className={`${styles.featureIcon} ${styles.iconBlue}`}>
+                    <span>📋</span>
+                  </div>
+                  <div className={styles.featureInfo}>
+                    <h3 className={styles.featureName}>简历优化</h3>
+                    <p className={styles.featureDesc}>AI智能简历分析与优化建议</p>
+                  </div>
+                </div>
+                <span className={styles.statusRunning}>正常运行</span>
+              </div>
+
+              <div className={`${styles.featureCard} ${styles.animationDelay2}`}>
+                <div className={styles.featureHeader}>
+                  <div className={`${styles.featureIcon} ${styles.iconPurple}`}>
+                    <span>🔍</span>
+                  </div>
+                  <div className={styles.featureInfo}>
+                    <h3 className={styles.featureName}>简小鉴</h3>
+                    <p className={styles.featureDesc}>企业信息甄别与风险评估</p>
+                  </div>
+                </div>
+                <span className={styles.statusRunning}>正常运行</span>
+              </div>
+
+              <div className={`${styles.featureCard} ${styles.animationDelay3}`}>
+                <div className={styles.featureHeader}>
+                  <div className={`${styles.featureIcon} ${styles.iconOrange}`}>
+                    <span>📤</span>
+                  </div>
+                  <div className={styles.featureInfo}>
+                    <h3 className={styles.featureName}>在线投递</h3>
+                    <p className={styles.featureDesc}>高效便捷的简历投递服务</p>
+                  </div>
+                </div>
+                <span className={styles.statusRunning}>正常运行</span>
+              </div>
+
+              <div className={`${styles.featureCard} ${styles.animationDelay4}`}>
+                <div className={styles.featureHeader}>
+                  <div className={`${styles.featureIcon} ${styles.iconGreen}`}>
+                    <span>💬</span>
+                  </div>
+                  <div className={styles.featureInfo}>
+                    <h3 className={styles.featureName}>交流论坛</h3>
+                    <p className={styles.featureDesc}>求职经验分享与互助社区</p>
+                  </div>
+                </div>
+                <span className={`${styles.statusNew} ${styles.sparkleEffect}`}>新功能上线</span>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        {/* 行动引导 */}
+        <section className={styles.actions}>
+          <div className={styles.actionButtons}>
+            <Link className={`${styles.primaryButton} ${styles.buttonAnimation}`} to="http://8.153.173.210:3999/">
+              <span className={styles.buttonContent}>访问论坛</span>
+              <span className={styles.buttonShine}></span>
+            </Link>
+            <Link className={`${styles.secondaryButton} ${styles.buttonHover}`} to="https://jianlipai.com/">
+              返回主站
+            </Link>
+            <Link className={`${styles.tertiaryButton} ${styles.buttonHover}`} to="/docs/create-resume">
+              使用指南
+            </Link>
           </div>
+        </section>
 
-          <div className={styles.featureCard}>
-            <div className={styles.featureIcon}>💬</div>
-            <h3>简小派论坛</h3>
-            <p>求职者交流社区</p>
-            <span className={styles.statusComing}>即将上线</span>
+        {/* 页脚信息 */}
+        <footer className={styles.footer}>
+          <div className={styles.footerContent}>
+            <div className={styles.supportInfo}>
+              <h4>技术支持</h4>
+              <p>如有问题，请通过以下方式联系我们：</p>
+              <div className={styles.contactList}>
+                <div className={`${styles.contactItem} ${styles.contactHover}`}>
+                  <span>QQ交流群：1043216521</span>
+                </div>
+                <div className={`${styles.contactItem} ${styles.contactHover}`}>
+                  <span>邮箱：support@jianlipai.com</span>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div className={styles.buttons}>
-          <Link className={styles.primaryButton} to="https://jianlipai.com/">
-            立即体验简小派 🚀
-          </Link>
-          <Link className={styles.secondaryButton} to="/docs/create-resume">
-            查看使用文档 📖
-          </Link>
-          <Link
-            className={styles.tertiaryButton}
-            to="/docs/upgrade-announcement"
-          >
-            升级详情 🔍
-          </Link>
-        </div>
-
-        <div className={styles.contactInfo}>
-          <p>📞 联系我们：QQ交流群 1043216521</p>
-          <p>📧 邮箱：support@jianlipai.com</p>
-        </div>
+        </footer>
       </div>
     </div>
   );
 };
 
-export default UpgradeAnnouncement; 
+export default ForumLaunchAnnouncement;
