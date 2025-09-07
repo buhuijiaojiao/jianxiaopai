@@ -36,8 +36,24 @@ const sidebars: SidebarsConfig = {
     // 重置密码相关文档
     "reset-password",
     //简小派积分等级机制相关文档
-    "level-system"
+    "level-system",
+    // 论坛相关文档
+  {
+    type: "category",
+    label: "论坛使用指南",
+    link: {
+      type: "generated-index",
+      slug: "/forum-use",
+      description: "💡 论坛使用指南",
+    },
+    collapsed: true,
+    items: [
+      "forum-use/login-forum",
+      "forum-use/publish-post",
+    ],
+  },
   ],
+  
 };
 
 export default sidebars;
