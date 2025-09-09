@@ -132,7 +132,7 @@ const ForumLaunchAnnouncement: React.FC = () => {
         {/* 行动引导 */}
         <section className={styles.actions}>
           <div className={styles.actionButtons}>
-            <Link className={`${styles.primaryButton} ${styles.buttonAnimation}`} to="http://8.153.173.210:3999/">
+            <Link className={`${styles.primaryButton} ${styles.buttonAnimation}`} to="https://luntan.jianlipai.com/">
               <span className={styles.buttonContent}>访问论坛</span>
               <span className={styles.buttonShine}></span>
             </Link>
