@@ -67,8 +67,7 @@ const announcementMeta = [
 ];
 
 const announcementActions = [
-  {label: '了解版本亮点', href: '/docs/intro', variant: 'primary' as const},
-  {label: '前往主站', href: 'https://jianlipai.com/', variant: 'secondary' as const, newTab: true},
+  {label: '前往主站', href: 'https://jianlipai.com/', variant: 'primary' as const, newTab: true},
 ];
 
 function HeroSection(): ReactNode {
@@ -87,7 +86,7 @@ function HeroSection(): ReactNode {
             <Link className={styles.primaryAction} to="https://jianlipai.com/">
               立即体验
             </Link>
-            <Link className={styles.secondaryAction} to="/docs/upgrade-announcement">
+            <Link className={styles.secondaryAction} to="/docs/create-resume">
               查看使用指南
             </Link>
             <Link className={styles.secondaryAction} to="https://luntan.jianlipai.com/">
