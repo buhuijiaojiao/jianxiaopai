@@ -106,7 +106,7 @@ const config: Config = {
           items: [
             {
               label: "使用指南",
-              to: "/docs/create-resume",
+              to: "/docs",
             },
           ],
         },

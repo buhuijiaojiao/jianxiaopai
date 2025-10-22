@@ -86,7 +86,7 @@ function HeroSection(): ReactNode {
             <Link className={styles.primaryAction} to="https://jianlipai.com/">
               立即体验
             </Link>
-            <Link className={styles.secondaryAction} to="/docs/create-resume">
+            <Link className={styles.secondaryAction} to="/docs">
               查看使用指南
             </Link>
             <Link className={styles.secondaryAction} to="https://luntan.jianlipai.com/">
