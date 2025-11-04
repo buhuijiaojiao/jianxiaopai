@@ -6,7 +6,9 @@ const sidebars: SidebarsConfig = {
     // 升级公告相关文档
     "intro",
     //自动投递脚本文档
-    "autosend"
+    "autosend",
+    //Offer猎手使用教程
+    "offer-hunter"
   ],
   
 };
